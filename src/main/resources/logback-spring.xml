@@ -36,16 +36,22 @@
             <charset>UTF-8</charset>
         </encoder>
  
-        <rollingPolicy
+ 		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<FileNamePattern>${LOGS}/archived/${APP_NAME}-error.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<maxFileSize>20MB</maxFileSize>
+		</rollingPolicy>
+ 
+        <!-- <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            rollover daily and when the file reaches 10 MegaBytes
             <fileNamePattern>${LOGS}/archived/${APP_NAME}.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
+        </rollingPolicy> -->
     </appender>
     <appender name="RollingFileError"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -60,17 +66,23 @@
             </Pattern>
             <charset>UTF-8</charset>
         </encoder>
- 
-        <rollingPolicy
+	
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<FileNamePattern>${LOGS}/archived/${APP_NAME}-error.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+			<maxFileSize>20MB</maxFileSize>
+		</rollingPolicy>
+
+        <!-- <rollingPolicy
             class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            rollover daily and when the file reaches 10 MegaBytes
             <fileNamePattern>${LOGS}/archived/${APP_NAME}-error.%d{yyyy-MM-dd}.%i.log
             </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy
                 class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
-        </rollingPolicy>
+        </rollingPolicy> -->
     </appender>
     <!-- LOG everything at INFO level -->
     <root level="info">
