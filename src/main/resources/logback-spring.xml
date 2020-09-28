@@ -37,7 +37,7 @@
         </encoder>
  
  		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-			<FileNamePattern>${LOGS}/archived/${APP_NAME}-error.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<FileNamePattern>${LOGS}/archived/${APP_NAME}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
 			<MaxHistory>30</MaxHistory>
 			<maxFileSize>20MB</maxFileSize>
 		</rollingPolicy>
